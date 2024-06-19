@@ -6,10 +6,13 @@ class UsersController < ApplicationController
 
   def create
     p 'USERS CREATE JUST RAN'
-    # @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-    @user = User.new(user_params)
+    @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+    # @user = User.new(user_params)
     p 123
     p @user
+    p @user.username
+    p @user.email
+    p @user.password
     p 456
 
     if @user.save
