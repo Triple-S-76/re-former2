@@ -10,6 +10,7 @@
   <input type="submit" value="Submit">
 </form>  %>
 
+<!--
 <%= form_tag('/users', method: 'post') do %>
   <%= label_tag(:username, 'Username') %>
   <%= text_field_tag(:username) %>
@@ -21,4 +22,18 @@
   <%= password_field_tag(:password) %>
   <br>
   <%= submit_tag 'Submit' %>
+<% end %>
+-->
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, 'Username: ' %>
+  <%= form.text_field :username, placeholder: 'Enter your username here' %>
+  <br>
+  <%= form.label :email, 'email: ' %>
+  <%= form.email_field :email, placeholder: 'Enter your email here' %>
+  <br>
+  <%= form.label :password, 'Password: ' %>
+  <%= form.password_field :password, placeholder: 'Enter your password here' %>
+  <br>
+  <%= form.submit 'Submit' %>
 <% end %>
